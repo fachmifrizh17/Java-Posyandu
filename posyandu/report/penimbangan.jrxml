@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="penimbangan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a56e07b1-3f4c-4d80-b80d-7c0826d93c5d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nimbang" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tb_penimbangan.`no_regis` AS tb_penimbangan_no_regis,
+     tb_penimbangan.`nama_bayi` AS tb_penimbangan_nama_bayi,
+     tb_penimbangan.`kode_penimbangan` AS tb_penimbangan_kode_penimbangan,
+     tb_penimbangan.`bulan` AS tb_penimbangan_bulan,
+     tb_penimbangan.`brt_badan` AS tb_penimbangan_brt_badan,
+     tb_penimbangan.`tngg_badan` AS tb_penimbangan_tngg_badan
+FROM
+     `tb_penimbangan` tb_penimbangan
+WHERE kode_penimbangan LIKE '%$P!{nimbang}%']]>
+	</queryString>
+	<field name="tb_penimbangan_no_regis" class="java.lang.Integer"/>
+	<field name="tb_penimbangan_nama_bayi" class="java.lang.String"/>
+	<field name="tb_penimbangan_kode_penimbangan" class="java.lang.String"/>
+	<field name="tb_penimbangan_bulan" class="java.lang.String"/>
+	<field name="tb_penimbangan_brt_badan" class="java.lang.String"/>
+	<field name="tb_penimbangan_tngg_badan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="199" y="18" width="150" height="20" uuid="a1fca308-763c-4d55-a11b-00c56f1f7bd8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[POSYANDU KEMUNING A]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="71" width="555" height="1" uuid="ae35ac82-6bd7-4457-9bb5-c0938c035892"/>
+			</line>
+			<line>
+				<reportElement x="0" y="74" width="555" height="1" uuid="c676ce5c-1f39-4d81-8f42-bbe030cc787f"/>
+			</line>
+			<staticText>
+				<reportElement x="132" y="38" width="290" height="20" uuid="edf383cb-c424-49d7-a7db-1584d334c3d4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[DEPOK JAWA BARAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="29" width="290" height="20" uuid="d4fd9ff7-9915-402f-8788-b7653eb68a2c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[RW.006 KELURAHAN RATU JAYA KECAMATAN CIPAYUNG]]></text>
+			</staticText>
+			<image>
+				<reportElement x="446" y="12" width="109" height="46" uuid="f626e450-f663-42b6-ad06-98dd2d805983"/>
+				<imageExpression><![CDATA["C:\\Users\\Fachmi Farizh\\Desktop\\Sultan\\report\\LOGO.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement x="188" y="0" width="177" height="20" uuid="fea51891-ea78-4523-8298-ce2a72e93012"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PENIMBANGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="49" width="14" height="20" uuid="6a84afc8-e937-433a-b506-929d8158097a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="49" width="79" height="20" uuid="3e75620a-a34d-4df9-9624-ba34554dae22"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[NOMOR REGIS ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="69" width="118" height="20" uuid="9b76e8d6-784f-41bb-b37a-411d5a0c9fcc"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[KODE PENIMBANGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="69" width="14" height="20" uuid="68fe4e34-3fc3-4bfa-b921-f87c6d5a4f54"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="49" width="100" height="20" uuid="176eb4fe-3de7-4432-b2fa-9dc834859db9"/>
+				<textFieldExpression><![CDATA[$F{tb_penimbangan_no_regis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="69" width="100" height="20" uuid="2b93328a-7913-454e-bac0-fce28e41f066"/>
+				<textFieldExpression><![CDATA[$F{tb_penimbangan_kode_penimbangan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="5761231c-368a-41bb-a15b-bfea0fa460bf"/>
+			</line>
+			<staticText>
+				<reportElement x="70" y="2" width="100" height="20" uuid="3f07f280-34d1-4b8f-9201-58f2d6962a85"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA BALITA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="2" width="100" height="20" uuid="aa416842-0094-4c3b-b53d-8be86bea3ef4"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[USIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="2" width="100" height="20" uuid="36f96861-3a74-448f-b85f-f84c50cecb8f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BERAT BADAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="2" width="100" height="20" uuid="22da3b8b-99a7-41f1-9a14-fdc69fc6cf62"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TINGGI BADAN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="22" width="555" height="1" uuid="7ed0d94a-449a-4bd2-bed9-48d93284c1c9"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="69" y="0" width="100" height="20" uuid="3d910b2a-a738-47aa-8731-3b3d6361a119"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_penimbangan_nama_bayi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="0" width="100" height="20" uuid="3c6e4a03-633d-419c-a16c-49afb7c61e33"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_penimbangan_bulan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="0" width="100" height="20" uuid="50b4b751-5317-4df0-a8dc-6f98c79fce77"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_penimbangan_brt_badan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="0" width="100" height="20" uuid="af7ff618-8c57-48c4-b3c3-386171617a7e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_penimbangan_tngg_badan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="19" width="555" height="1" uuid="cbe74fd5-167f-47e4-8f8b-18863b70453a"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="83" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="429" y="0" width="100" height="20" uuid="54a76bfc-1b9f-45be-adf4-73a5786bb626"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="397" y="0" width="52" height="20" uuid="227b8215-6e89-4d94-9eb6-4410f02c5201"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Depok,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="60" width="104" height="20" uuid="ffc187e1-e246-43f3-b475-8bc31fbec233"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[(..........NAMA..........)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="10" width="149" height="20" uuid="fb4dd8b8-6972-4d7a-95ec-d60d7c6bbb23"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Ketua Posyandu Kemuning A]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="6" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="5" splitType="Stretch"/>
+	</summary>
+</jasperReport>

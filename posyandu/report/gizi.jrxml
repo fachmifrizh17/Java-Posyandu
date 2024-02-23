@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gizi" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="543729a2-f96e-49b5-9a60-79cd8102243f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tb_gizi.`id` AS tb_gizi_id,
+     tb_gizi.`nama` AS tb_gizi_nama,
+     tb_gizi.`status_gizi` AS tb_gizi_status_gizi
+FROM
+     `tb_gizi` tb_gizi]]>
+	</queryString>
+	<field name="tb_gizi_id" class="java.lang.String"/>
+	<field name="tb_gizi_nama" class="java.lang.String"/>
+	<field name="tb_gizi_status_gizi" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="199" y="6" width="150" height="20" uuid="931a2399-200f-47c8-9e76-ade8fac2738b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[POSYANDU KEMUNING A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="17" width="290" height="20" uuid="522fb1bd-d81b-44fa-9871-8e38be006a1f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[RW.006 KELURAHAN RATU JAYA KECAMATAN CIPAYUNG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="26" width="290" height="20" uuid="0837fe7f-8066-4550-8459-90d4ad51431f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[DEPOK JAWA BARAT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="59" width="555" height="1" uuid="cde582de-5b08-4bfa-8557-990da8a4174d"/>
+			</line>
+			<image>
+				<reportElement x="466" y="9" width="71" height="37" uuid="f0cbbc63-8a1b-4398-bfaa-469cd3bf502f"/>
+				<imageExpression><![CDATA["C:\\Users\\Fachmi Farizh\\Desktop\\Sultan\\report\\LOGO.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="185" y="15" width="177" height="20" uuid="62862dcb-2739-4886-acbf-cde6264d8a32"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA GIZI]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="63" width="555" height="1" uuid="6f73d61d-3b06-413b-8401-ac19cc53459b"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="537a0a7b-6e39-4ab5-952a-12c4eded7e95"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="116" y="0" width="100" height="20" uuid="5f5036ed-c83f-4227-9b15-6cc2cab3253f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID BAYI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="0" width="100" height="20" uuid="18e15305-ee42-49cf-9132-084707c9a662"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA BALITA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="0" width="100" height="20" uuid="cfbb758b-53de-4489-9035-a40e7f8781c5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STATUS GIZI]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="f8b5d09a-c178-444f-94bc-566b6baec8f2"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="116" y="0" width="100" height="20" uuid="1d81479f-e797-47ce-bb71-0a0925e58bf4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_gizi_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="0" width="100" height="20" uuid="0866cbe9-f80d-49e1-b871-a409c2a58793"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_gizi_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="100" height="20" uuid="9811d5e3-120f-4b28-963a-6da46f550670"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_gizi_status_gizi}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="19" width="555" height="1" uuid="b5b7d808-24ce-4d32-ad4a-585e3356dc1a"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement x="412" y="70" width="104" height="20" uuid="8a856d3b-8c47-46d6-a091-2e1125afe678"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[(..........NAMA..........)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="20" width="149" height="20" uuid="e8e42b80-ebe6-4d72-abd2-9e8667a14d35"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Ketua Posyandu Kemuning A]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="431" y="10" width="100" height="20" uuid="936fb904-5084-4882-86c4-1bd91ef9484c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="399" y="10" width="52" height="20" uuid="78debbaf-3e2b-4fe8-9204-941d7786cee3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Depok,]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="2" splitType="Stretch"/>
+	</summary>
+</jasperReport>
